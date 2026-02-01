@@ -1,0 +1,243 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.stock_manager"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="36" />
+10
+11    <!-- For Android 6–10 -->
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:5:5-80
+12-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:5:22-78
+13
+14    <!-- For Android 11+ (all‑files access) -->
+15    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+15-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:8:5-81
+15-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:8:22-79
+16
+17    <!-- Pour le plugin ProcessText de Flutter -->
+18    <queries>
+18-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:43:5-48:15
+19        <intent>
+19-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:44:9-47:18
+20            <action android:name="android.intent.action.PROCESS_TEXT" />
+20-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:45:13-72
+20-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:45:21-70
+21
+22            <data android:mimeType="text/plain" />
+22-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:46:13-50
+22-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:46:19-48
+23        </intent>
+24        <intent>
+24-->[:file_picker] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-10.2.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-12:18
+25            <action android:name="android.intent.action.GET_CONTENT" />
+25-->[:file_picker] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-10.2.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-72
+25-->[:file_picker] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-10.2.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:21-69
+26
+27            <data android:mimeType="*/*" />
+27-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:46:13-50
+27-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:46:19-48
+28        </intent>
+29    </queries>
+30
+31    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+31-->[:local_auth_android] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\local_auth_android-1.0.49\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-72
+31-->[:local_auth_android] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\local_auth_android-1.0.49\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:22-69
+32    <uses-permission android:name="android.permission.BLUETOOTH" />
+32-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-68
+32-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:22-65
+33    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+33-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-74
+33-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-71
+34    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+34-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:5-81
+34-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:22-78
+35    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- suppress DeprecatedClassUsageInspection -->
+35-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:5-79
+35-->[:flutter_bluetooth_serial] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_bluetooth_serial-0.4.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:22-76
+36    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+36-->[androidx.biometric:biometric:1.1.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\bd1be39a4121b41df3cecdb1f1acb24d\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
+36-->[androidx.biometric:biometric:1.1.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\bd1be39a4121b41df3cecdb1f1acb24d\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
+37
+38    <permission
+38-->[androidx.core:core:1.15.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\0a69220afb472c7b014f0ae28962f998\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+39        android:name="com.example.stock_manager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+39-->[androidx.core:core:1.15.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\0a69220afb472c7b014f0ae28962f998\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+40        android:protectionLevel="signature" />
+40-->[androidx.core:core:1.15.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\0a69220afb472c7b014f0ae28962f998\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+41
+42    <uses-permission android:name="com.example.stock_manager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+42-->[androidx.core:core:1.15.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\0a69220afb472c7b014f0ae28962f998\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+42-->[androidx.core:core:1.15.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\0a69220afb472c7b014f0ae28962f998\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+43
+44    <application
+45        android:name="android.app.Application"
+45-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:12:9-42
+46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+46-->[androidx.core:core:1.15.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\0a69220afb472c7b014f0ae28962f998\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+47        android:extractNativeLibs="true"
+48        android:icon="@mipmap/ic_launcher"
+48-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:13:9-43
+49        android:label="Bachene Soft"
+49-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:11:9-37
+50        android:requestLegacyExternalStorage="true" >
+50-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:14:9-52
+51        <activity
+51-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:17:9-34:20
+52            android:name="com.example.stock_manager.MainActivity"
+52-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:18:13-41
+53            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+53-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:22:13-163
+54            android:exported="true"
+54-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:19:13-36
+55            android:hardwareAccelerated="true"
+55-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:23:13-47
+56            android:launchMode="singleTop"
+56-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:20:13-43
+57            android:theme="@style/LaunchTheme"
+57-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:21:13-47
+58            android:windowSoftInputMode="adjustResize" >
+58-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:24:13-55
+59            <meta-data
+59-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:26:13-28:56
+60                android:name="io.flutter.embedding.android.NormalTheme"
+60-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:27:17-72
+61                android:resource="@style/NormalTheme" />
+61-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:28:17-54
+62
+63            <intent-filter>
+63-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:30:13-33:29
+64                <action android:name="android.intent.action.MAIN" />
+64-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:31:17-68
+64-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:31:25-66
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:32:17-76
+66-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:32:27-74
+67            </intent-filter>
+68        </activity>
+69
+70        <!-- Nécessaire pour Flutter plugins -->
+71        <meta-data
+71-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:37:9-39:32
+72            android:name="flutterEmbedding"
+72-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:38:13-44
+73            android:value="2" />
+73-->C:\Users\eLiTeBooK\Documents\PythonPrograms\App_Bsoft\App2\stock_manager\android\app\src\main\AndroidManifest.xml:39:13-30
+74        <!--
+75           Declares a provider which allows us to store files to share in
+76           '.../caches/share_plus' and grant the receiving action access
+77        -->
+78        <provider
+78-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:9-21:20
+79            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
+79-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-77
+80            android:authorities="com.example.stock_manager.flutter.share_provider"
+80-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:13-74
+81            android:exported="false"
+81-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:13-37
+82            android:grantUriPermissions="true" >
+82-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:17:13-47
+83            <meta-data
+83-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:18:13-20:68
+84                android:name="android.support.FILE_PROVIDER_PATHS"
+84-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:19:17-67
+85                android:resource="@xml/flutter_share_file_paths" />
+85-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:17-65
+86        </provider>
+87        <!--
+88           This manifest declared broadcast receiver allows us to use an explicit
+89           Intent when creating a PendingItent to be informed of the user's choice
+90        -->
+91        <receiver
+91-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:9-32:20
+92            android:name="dev.fluttercommunity.plus.share.SharePlusPendingIntent"
+92-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:13-82
+93            android:exported="false" >
+93-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:13-37
+94            <intent-filter>
+94-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:13-31:29
+95                <action android:name="EXTRA_CHOSEN_COMPONENT" />
+95-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:30:17-65
+95-->[:share_plus] C:\Users\eLiTeBooK\AppData\Local\Pub\Cache\hosted\pub.dev\share_plus-11.0.0\android\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:30:25-62
+96            </intent-filter>
+97        </receiver>
+98
+99        <provider
+99-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:24:9-32:20
+100            android:name="androidx.startup.InitializationProvider"
+100-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:25:13-67
+101            android:authorities="com.example.stock_manager.androidx-startup"
+101-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:26:13-68
+102            android:exported="false" >
+102-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:27:13-37
+103            <meta-data
+103-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+104                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+104-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+105                android:value="androidx.startup" />
+105-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\9a58102024d2bac5d1ee1e1203812678\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+106            <meta-data
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+108                android:value="androidx.startup" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+109        </provider>
+110
+111        <uses-library
+111-->[androidx.window:window:1.2.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+112            android:name="androidx.window.extensions"
+112-->[androidx.window:window:1.2.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+113            android:required="false" />
+113-->[androidx.window:window:1.2.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+114        <uses-library
+114-->[androidx.window:window:1.2.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+115            android:name="androidx.window.sidecar"
+115-->[androidx.window:window:1.2.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+116            android:required="false" />
+116-->[androidx.window:window:1.2.0] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+117
+118        <receiver
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+119            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+120            android:directBootAware="false"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+121            android:enabled="true"
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+122            android:exported="true"
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+123            android:permission="android.permission.DUMP" >
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+125                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+128                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+129            </intent-filter>
+130            <intent-filter>
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+131                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+132            </intent-filter>
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+134                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eLiTeBooK\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+135            </intent-filter>
+136        </receiver>
+137    </application>
+138
+139</manifest>
