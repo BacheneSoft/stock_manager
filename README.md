@@ -1,16 +1,31 @@
-# stock_manager
+# Bachene Soft - Stock Manager
 
-A new Flutter project.
+Professional stock and sales management application built with Flutter.
 
-## Getting Started
+## 🚀 Key Features
 
-This project is a starting point for a Flutter application.
+- **Inventory Management**: Track articles, categories, and suppliers with ease.
+- **Sales & Clients**: Manage sales transactions and maintain client records/balances.
+- **Reporting & Export**:
+    - Build professional PDF receipts and reports.
+    - Export data for easy sharing.
+- **Printing**: Integrated support for Bluetooth thermal printers for instant receipt printing.
+- **Security**:
+    - Secure PIN lock system.
+    - Biometric authentication (Fingerprint/Face Unlock) support.
+    - Integrated activation key system.
+- **User Experience**: Modern, responsive UI powered by Google Fonts (Poppins).
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Technology Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Framework**: [Flutter](https://flutter.dev)
+- **Database**: SQLite (`sqflite`) for robust local data persistence.
+- **State Management**: `provider` for efficient and scalable state handling.
+- **Security**: `local_auth` and `shared_preferences`.
+- **Printing**: `blue_thermal_printer`.
+- **PDF**: `pdf` and `flutter_pdfview`.
+- **Fonts**: `google_fonts` (Poppins).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+© 2026 Bachene Soft.
