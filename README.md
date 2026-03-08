@@ -1,6 +1,6 @@
 # Bachene Soft - Professional Stock & Sales Manager
 
-[![Flutter](https://img.shields.io/badge/Flutter-v3.7.2-blue.svg)](https://flutter.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-v3.29.3-blue.svg)](https://flutter.dev)
 [![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
