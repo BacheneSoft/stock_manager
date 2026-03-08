@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import '../models/article.dart';
-import '../models/category.dart';
-import '../models/client.dart';
-import '../models/vente.dart';
-import '../models/vente_article.dart';
-import '../models/fournisseur.dart';
-import '../models/purchase.dart';
-import '../models/cloture.dart';
-import '../models/payment.dart';
+import '../../data/models/article.dart';
+import '../../data/models/category.dart';
+import '../../data/models/client.dart';
+import '../../data/models/vente.dart';
+import '../../data/models/vente_article.dart';
+import '../../data/models/fournisseur.dart';
+import '../../data/models/purchase.dart';
+import '../../data/models/cloture.dart';
+import '../../data/models/payment.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -350,6 +350,15 @@ class DatabaseHelper {
     return await db.delete('ventes', where: 'id = ?', whereArgs: [id]);
   }
 
+  Future<void> deleteVenteArticles(int venteId) async {
+    final db = await database;
+    await db.delete(
+      'vente_articles',
+      where: 'venteId = ?',
+      whereArgs: [venteId],
+    );
+  }
+
   // VenteArticle CRUD
   Future<int> insertVenteArticle(VenteArticle venteArticle) async {
     final db = await database;
@@ -679,3 +688,4 @@ class DatabaseHelper {
     db.close();
   }
 }
+

@@ -26,3 +26,4 @@ Future<bool> requestStoragePermission(BuildContext context) async {
   }
   return false;
 }
+

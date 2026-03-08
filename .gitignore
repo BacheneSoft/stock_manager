@@ -43,3 +43,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Production Secrets (GitHub Safeguard)
+lib/core/config/secrets.dart
+
+# Database and local files
+*.db
+*.db-journal
+test_results.txt
+final_analysis.txt
+analysis_output_v*.txt
