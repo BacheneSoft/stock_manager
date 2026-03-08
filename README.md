@@ -4,7 +4,14 @@
 [![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A high-performance, professional stock and sales management application built with **Flutter**. Designed with **Clean Architecture** principles, this project demonstrates senior-level expertise in mobile development, state management, and robust local data persistence.
+A professional **Stock & Sales Management** application built to streamline daily business workflows. It addresses common operational pain points such as **inventory mismanagement**, **untracked credit sales**, and **inefficient reporting**. By providing a secure, offline-first platform, it enables business owners to manage their stock, sales, and relationships with precision and ease.
+
+### ✨ Project Highlights
+- **End-to-End Inventory Control**: Real-time tracking of stock levels with automated alerts for low inventory.
+- **Sales & Credit Management**: Seamlessly record sales and manage client debts with a dedicated credit tracking system.
+- **Professional Document Generation**: Instant generation of PDF receipts and daily closure reports for clear accountability.
+- **Privacy by Design**: Secure biometric authentication (Fingerprint/FaceID) ensuring business data remains confidential.
+- **Reliable Offline Operation**: Built to work perfectly without an internet connection, ideal for fast-paced retail environments.
 
 ---
 
