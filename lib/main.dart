@@ -9,11 +9,7 @@ void main() async {
   // Catch Flutter framework errors (synchronous)
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
-    LoggerService.e(
-      'Flutter Error: ${details.exception}',
-      details.exception,
-      details.stack,
-    );
+    LoggerService.e('Flutter Error: ${details.exception}', details.exception, details.stack);
   };
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,16 +19,16 @@ void main() async {
     LoggerService.e('Asynchronous/Platform Error', error, stack);
     return true; // Error was handled
   };
-
+  
   final prefs = await SharedPreferences.getInstance();
-
+  
   bool isActivated = (prefs.getBool('isActivated') ?? false);
-
+  
   if (AppConfig.isDemoMode) {
     // Demo Mode Trial Logic
     final firstLaunch = prefs.getInt('demo_first_launch');
     final now = DateTime.now().millisecondsSinceEpoch;
-
+    
     if (firstLaunch == null) {
       // First time running demo mode, store the timestamp
       await prefs.setInt('demo_first_launch', now);
@@ -44,9 +40,7 @@ void main() async {
         isActivated = true;
       } else {
         // Trial expired, fallback to real activation check (unless already activated)
-        LoggerService.w(
-          'Demo Mode trial expired (${AppConfig.demoTrialDays} days).',
-        );
+        LoggerService.w('Demo Mode trial expired (${AppConfig.demoTrialDays} days).');
       }
     }
   }
@@ -77,6 +71,7 @@ void main() async {
   runApp(StockManagerApp(isActivated: isActivated));
 }
 
-// Note: PinLockWrapper and ActivationScreen are still here for now,
+// Note: PinLockWrapper and ActivationScreen are still here for now, 
 // they will be moved to screens folder in the next step.
 // Classes below this line are unchanged but will be relocated shortly.
+
