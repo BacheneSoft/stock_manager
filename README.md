@@ -117,4 +117,4 @@ The project is thoroughly documented using **Triple-Slash DocComments** (`///`),
 
 ---
 
-© 2026 Bachene Soft. All rights reserved.
+© 2026 Bachene Soft. Developed by **Moundhir Bachene**. All rights reserved.
