@@ -10,17 +10,17 @@ A high-performance, professional stock and sales management application built wi
 
 ## 📸 visual Overview
 
-| Home Screen | New Sale | Stock Entry |
+| Home Screen | New Sale | Add Inventory |
 | :---: | :---: | :---: |
-| ![Home](screenshots/sm_home.jpg) | ![New Sale](screenshots/sm_new_sale.jpg) | ![Stock Entry](screenshots/sm_stock_entry.jpg) |
+| ![Home](screenshots/sm_new_sale.jpg) | ![New Sale](screenshots/sm_stock_entry2.jpg) | ![Add Inventory](screenshots/sm_home.jpg) |
 
 | Client Management | Supplier Management | Inventory Check |
 | :---: | :---: | :---: |
 | ![Clients](screenshots/sm_client.jpg) | ![Suppliers](screenshots/sm_supplier.jpg) | ![Inventory](screenshots/sm_check_stock.jpg) |
 
-| Purchase History | Sales Report | Daily Closures |
-| :---: | :---: | :---: |
-| ![Purchases](screenshots/sm_purchase_history.jpg) | ![Stock 2](screenshots/sm_stock_entry2.jpg) | ![Closures](screenshots/sm_clotures.jpg) |
+| Daily Closures |
+| :---: |
+| ![Closures](screenshots/sm_purchase_history.jpg) |
 
 ---
 
@@ -47,7 +47,6 @@ graph TD
         
         subgraph Data_Sources["Data Sources"]
             SQL[(SQLite / Local DB)]
-            FB[(Firebase / Remote Sync)]
         end
     end
 
@@ -57,7 +56,6 @@ graph TD
     Repos --> Models
     Models --> Entities
     Repos --> SQL
-    Repos -.-> FB
 ```
 
 ### Key Architectural Highlights:
