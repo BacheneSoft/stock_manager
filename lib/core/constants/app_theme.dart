@@ -23,7 +23,8 @@ class AppTheme {
     error: AppColors.error,
     onError: AppColors.onError,
     background: AppColors.surface, // Updated to use the new AppColors.surface
-    onBackground: AppColors.onSurface, // Updated to use the new AppColors.onSurface
+    onBackground:
+        AppColors.onSurface, // Updated to use the new AppColors.onSurface
     surface: AppColors.surface,
     onSurface: AppColors.onSurface,
   );

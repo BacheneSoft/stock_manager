@@ -419,7 +419,9 @@ class _StockListScreenState extends State<StockListScreen>
                           Icon(
                             Icons.inventory_2_rounded,
                             size: 64,
-                            color: theme.colorScheme.primary.withValues(alpha: 0.7),
+                            color: theme.colorScheme.primary.withValues(
+                              alpha: 0.7,
+                            ),
                           ),
                           const SizedBox(height: 16),
                           Text(

@@ -160,7 +160,9 @@ class _CheckStockScreenState extends State<CheckStockScreen> {
                           Icon(
                             Icons.inventory_2_outlined,
                             size: 80,
-                            color: theme.colorScheme.primary.withValues(alpha: 0.7),
+                            color: theme.colorScheme.primary.withValues(
+                              alpha: 0.7,
+                            ),
                           ),
                           const SizedBox(height: 24),
                           Text(
@@ -223,10 +225,16 @@ class _CheckStockScreenState extends State<CheckStockScreen> {
                                     decoration: BoxDecoration(
                                       color:
                                           article.quantity > 10
-                                              ? Colors.green.withValues(alpha: 0.1)
+                                              ? Colors.green.withValues(
+                                                alpha: 0.1,
+                                              )
                                               : article.quantity > 5
-                                              ? Colors.orange.withValues(alpha: 0.1)
-                                              : Colors.red.withValues(alpha: 0.1),
+                                              ? Colors.orange.withValues(
+                                                alpha: 0.1,
+                                              )
+                                              : Colors.red.withValues(
+                                                alpha: 0.1,
+                                              ),
                                       borderRadius: BorderRadius.circular(20),
                                       border: Border.all(
                                         color:

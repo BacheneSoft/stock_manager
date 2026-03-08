@@ -389,8 +389,9 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(14),
                                     ),
-                                    color: theme.colorScheme.primary
-                                        .withValues(alpha: 0.08),
+                                    color: theme.colorScheme.primary.withValues(
+                                      alpha: 0.08,
+                                    ),
                                     child: Padding(
                                       padding: const EdgeInsets.all(16.0),
                                       child: Row(
@@ -520,14 +521,22 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                                     decoration: BoxDecoration(
                                       color:
                                           clientCredit > 0
-                                              ? Colors.orange.withValues(alpha: 0.1)
-                                              : Colors.green.withValues(alpha: 0.1),
+                                              ? Colors.orange.withValues(
+                                                alpha: 0.1,
+                                              )
+                                              : Colors.green.withValues(
+                                                alpha: 0.1,
+                                              ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
                                         color:
                                             clientCredit > 0
-                                                ? Colors.orange.withValues(alpha: 0.3)
-                                                : Colors.green.withValues(alpha: 0.3),
+                                                ? Colors.orange.withValues(
+                                                  alpha: 0.3,
+                                                )
+                                                : Colors.green.withValues(
+                                                  alpha: 0.3,
+                                                ),
                                       ),
                                     ),
                                     child: Row(
@@ -663,7 +672,9 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                                         decoration: BoxDecoration(
                                           color:
                                               credit > 0
-                                                  ? Colors.red.withValues(alpha: 0.1)
+                                                  ? Colors.red.withValues(
+                                                    alpha: 0.1,
+                                                  )
                                                   : Colors.green.withOpacity(
                                                     0.1,
                                                   ),
@@ -734,7 +745,9 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                                         Container(
                                           padding: const EdgeInsets.all(8),
                                           decoration: BoxDecoration(
-                                            color: Colors.blue.withValues(alpha: 0.1),
+                                            color: Colors.blue.withValues(
+                                              alpha: 0.1,
+                                            ),
                                             borderRadius: BorderRadius.circular(
                                               6,
                                             ),

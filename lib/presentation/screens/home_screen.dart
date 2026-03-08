@@ -794,7 +794,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ),
                                                 );
                                                 if (!await dbFile.exists()) {
-                                                  if (!parentContext.mounted) return;
+                                                  if (!parentContext.mounted)
+                                                    return;
                                                   ScaffoldMessenger.of(
                                                     parentContext,
                                                   ).showSnackBar(
@@ -814,10 +815,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 }
                                                 await Share.shareXFiles(
                                                   [XFile(dbFile.path)],
-                                                  subject: 'Stock Manager Backup',
+                                                  subject:
+                                                      'Stock Manager Backup',
                                                 );
                                               } catch (e) {
-                                                if (!parentContext.mounted) return;
+                                                if (!parentContext.mounted)
+                                                  return;
                                                 ScaffoldMessenger.of(
                                                   parentContext,
                                                 ).showSnackBar(

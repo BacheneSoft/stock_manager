@@ -271,7 +271,9 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                       margin: const EdgeInsets.symmetric(vertical: 6),
                       color:
                           isSelected
-                              ? theme.colorScheme.primary.withValues(alpha: 0.08)
+                              ? theme.colorScheme.primary.withValues(
+                                alpha: 0.08,
+                              )
                               : Colors.white,
                       child: ListTile(
                         leading: CircleAvatar(

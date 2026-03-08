@@ -249,7 +249,9 @@ class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
                             Icon(
                               Icons.history,
                               size: 80,
-                              color: theme.colorScheme.primary.withValues(alpha: 0.7),
+                              color: theme.colorScheme.primary.withValues(
+                                alpha: 0.7,
+                              ),
                             ),
                             const SizedBox(height: 24),
                             Text(
@@ -303,7 +305,9 @@ class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
                                           vertical: 6,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: Colors.blue.withValues(alpha: 0.1),
+                                          color: Colors.blue.withValues(
+                                            alpha: 0.1,
+                                          ),
                                           borderRadius: BorderRadius.circular(
                                             20,
                                           ),

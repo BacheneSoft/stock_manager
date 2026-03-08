@@ -205,13 +205,19 @@ class _ClientDetailsScreenState extends State<ClientDetailsScreen> {
                                       decoration: BoxDecoration(
                                         color:
                                             client.credit > 0
-                                                ? Colors.red.withValues(alpha: 0.1)
-                                                : Colors.green.withValues(alpha: 0.1),
+                                                ? Colors.red.withValues(
+                                                  alpha: 0.1,
+                                                )
+                                                : Colors.green.withValues(
+                                                  alpha: 0.1,
+                                                ),
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
                                           color:
                                               client.credit > 0
-                                                  ? Colors.red.withValues(alpha: 0.3)
+                                                  ? Colors.red.withValues(
+                                                    alpha: 0.3,
+                                                  )
                                                   : Colors.green.withOpacity(
                                                     0.3,
                                                   ),
