@@ -3,6 +3,7 @@
 [![Flutter](https://img.shields.io/badge/Flutter-v3.29.3-blue.svg)](https://flutter.dev)
 [![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-green.svg)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Flutter CI](https://github.com/BacheneSoft/stock_manager/actions/workflows/ci.yml/badge.svg)
 
 A professional **Stock & Sales Management** application built to streamline daily business workflows. It addresses common operational pain points such as **inventory mismanagement**, **untracked credit sales**, and **inefficient reporting**. By providing a secure, offline-first platform, it enables business owners to manage their stock, sales, and relationships with precision and ease.
 
