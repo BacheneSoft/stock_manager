@@ -12,15 +12,15 @@ A high-performance, professional stock and sales management application built wi
 
 | Home Screen | New Sale | Add Inventory |
 | :---: | :---: | :---: |
-| ![Home](screenshots/sm_new_sale.jpg) | ![New Sale](screenshots/sm_stock_entry2.jpg) | ![Add Inventory](screenshots/sm_home.jpg) |
+| <img src="screenshots/sm_new_sale.jpg" height="350"> | <img src="screenshots/sm_stock_entry2.jpg" height="350"> | <img src="screenshots/sm_home.jpg" height="350"> |
 
-| Client Management | Supplier Management | Inventory Check |
+| Purchase History | Check Inventory | Daily Closures |
 | :---: | :---: | :---: |
-| ![Clients](screenshots/sm_client.jpg) | ![Suppliers](screenshots/sm_supplier.jpg) | ![Inventory](screenshots/sm_check_stock.jpg) |
+| <img src="screenshots/sm_check_stock.jpg" height="350"> | <img src="screenshots/sm_clotures.jpg" height="350"> | <img src="screenshots/sm_purchase_history.jpg" height="350"> |
 
-| Daily Closures |
-| :---: |
-| ![Closures](screenshots/sm_purchase_history.jpg) |
+| Client Management | Supplier Management |
+| :---: | :---: |
+| <img src="screenshots/sm_client.jpg" height="350"> | <img src="screenshots/sm_supplier.jpg" height="350"> |
 
 ---
 
