@@ -224,7 +224,7 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                 filled: _selectedFournisseur != null,
                 fillColor:
                     _selectedFournisseur != null
-                        ? theme.colorScheme.primary.withOpacity(0.05)
+                        ? theme.colorScheme.primary.withValues(alpha: 0.05)
                         : null,
               ),
               onChanged: (v) => setState(() => _articleSearch = v),
@@ -271,7 +271,7 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                       margin: const EdgeInsets.symmetric(vertical: 6),
                       color:
                           isSelected
-                              ? theme.colorScheme.primary.withOpacity(0.08)
+                              ? theme.colorScheme.primary.withValues(alpha: 0.08)
                               : Colors.white,
                       child: ListTile(
                         leading: CircleAvatar(
@@ -558,7 +558,7 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
                   ),
-                  color: theme.colorScheme.primary.withOpacity(0.1),
+                  color: theme.colorScheme.primary.withValues(alpha: 0.1),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
@@ -567,7 +567,7 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                           Icons.info_outline,
                           color: Theme.of(
                             context,
-                          ).colorScheme.primary.withOpacity(0.7),
+                          ).colorScheme.primary.withValues(alpha: 0.7),
                         ),
                         const SizedBox(width: 12),
                         Expanded(
@@ -577,7 +577,7 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                               fontWeight: FontWeight.w500,
                               color: Theme.of(
                                 context,
-                              ).colorScheme.primary.withOpacity(0.7),
+                              ).colorScheme.primary.withValues(alpha: 0.7),
                             ),
                           ),
                         ),

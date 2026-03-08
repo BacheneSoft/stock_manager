@@ -85,7 +85,7 @@ class AnimatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: color.withOpacity(0.9),
+      color: color.withValues(alpha: 0.9),
       borderRadius: BorderRadius.circular(30),
       child: InkWell(
         borderRadius: BorderRadius.circular(30),
@@ -419,7 +419,7 @@ class _StockListScreenState extends State<StockListScreen>
                           Icon(
                             Icons.inventory_2_rounded,
                             size: 64,
-                            color: theme.colorScheme.primary.withOpacity(0.7),
+                            color: theme.colorScheme.primary.withValues(alpha: 0.7),
                           ),
                           const SizedBox(height: 16),
                           Text(
@@ -485,7 +485,7 @@ class _StockListScreenState extends State<StockListScreen>
                                 child: ListTile(
                                   leading: CircleAvatar(
                                     backgroundColor: theme.colorScheme.primary
-                                        .withOpacity(0.1),
+                                        .withValues(alpha: 0.1),
                                     child: Icon(
                                       Icons.widgets_rounded,
                                       color: theme.colorScheme.primary,

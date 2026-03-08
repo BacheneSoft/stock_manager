@@ -1,0 +1,76 @@
+﻿Analyzing stock_manager...                                      
+
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\constants\app_theme.dart:25:5 - deprecated_member_use
+   info - 'onBackground' is deprecated and shouldn't be used. Use onSurface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\constants\app_theme.dart:26:5 - deprecated_member_use
+   info - 'v' is deprecated and shouldn't be used. [Level.verbose] is being deprecated in favor of [Level.trace], use [t] instead - lib\core\services\logger_service.dart:41:13 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_article_name_screen.dart:83:21 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_article_name_screen.dart:85:33 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_article_screen.dart:214:33 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_article_screen.dart:279:37 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_category_screen.dart:46:35 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_client_screen.dart:130:54 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_client_screen.dart:149:54 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_client_screen.dart:158:45 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_vente_screen.dart:45:36 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\add_vente_screen.dart:667:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\add_vente_screen.dart:676:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\add_vente_screen.dart:679:68 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_vente_screen.dart:949:49 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_vente_screen.dart:962:49 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\add_vente_screen.dart:966:59 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\articles_list_screen.dart:70:35 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\articles_list_screen.dart:100:33 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\articles_list_screen.dart:240:66 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:107:23 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\presentation\screens\client_details_screen.dart:110:48 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\client_details_screen.dart:215:66 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:368:45 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\presentation\screens\client_details_screen.dart:378:47 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:383:47 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:388:47 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\client_details_screen.dart:533:68 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:644:43 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:656:43 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:701:45 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:736:17 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\client_details_screen.dart:740:17 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\clients_list_screen.dart:226:66 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\clients_list_screen.dart:281:33 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\clients_list_screen.dart:315:33 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:101:35 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:272:44 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:358:51 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:359:58 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:408:51 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:409:58 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:686:53 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:726:53 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:743:51 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:772:53 - use_build_context_synchronously
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\presentation\screens\home_screen.dart:815:55 - deprecated_member_use
+   info - 'shareXFiles' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\presentation\screens\home_screen.dart:815:61 - deprecated_member_use
+   info - Statements in an if should be enclosed in a block - lib\presentation\screens\home_screen.dart:873:37 - curly_braces_in_flow_control_structures
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:885:56 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\home_screen.dart:898:56 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\presentation\screens\pin_lock_screen.dart:158:48 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\presentation\screens\pin_lock_screen.dart:165:44 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\stock_entry_screen.dart:133:43 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\stock_entry_screen.dart:393:61 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\stock_entry_screen.dart:736:40 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\stock_list_screen.dart:207:53 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\presentation\screens\stock_list_screen.dart:470:69 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\stock_list_screen.dart:554:41 - use_build_context_synchronously
+   info - The import of 'package:cross_file/cross_file.dart' is unnecessary because all of the used elements are also provided by the import of 'package:share_plus/share_plus.dart' - lib\presentation\screens\vente_pdf_screen.dart:19:8 - unnecessary_import
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:56:48 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:254:54 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:260:54 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:354:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:360:37 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:364:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:370:37 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:420:48 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:435:46 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\presentation\screens\vente_pdf_screen.dart:445:46 - use_build_context_synchronously
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\presentation\screens\vente_pdf_screen.dart:462:31 - deprecated_member_use
+   info - 'shareXFiles' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\presentation\screens\vente_pdf_screen.dart:462:37 - deprecated_member_use
+

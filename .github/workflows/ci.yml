@@ -13,6 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Create dummy secrets.dart
+        run: |
+          mkdir -p lib/core/config
+          echo "const List<String> productionObfuscatedKeys = [];" > lib/core/config/secrets.dart
+          echo "const Map<String, int> productionTestKeysExpiration = {};" >> lib/core/config/secrets.dart
+
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:

@@ -7,7 +7,7 @@ import 'core/config/app_config.dart';
 
 void main() async {
   // Catch Flutter framework errors (synchronous)
-  FlutterError.onError = (FlutterErrorDetails details) {
+  FlutterError.onError = (details) {
     FlutterError.presentError(details);
     LoggerService.e('Flutter Error: ${details.exception}', details.exception, details.stack);
   };
@@ -15,7 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Catch asynchronous errors outside of Flutter (Platform/Isolate errors)
-  PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
+  PlatformDispatcher.instance.onError = (error, stack) {
     LoggerService.e('Asynchronous/Platform Error', error, stack);
     return true; // Error was handled
   };

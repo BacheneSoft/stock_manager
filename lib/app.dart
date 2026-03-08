@@ -19,8 +19,7 @@ import 'data/repositories/category_repository.dart';
 class StockManagerApp extends StatelessWidget {
   final bool isActivated;
 
-  const StockManagerApp({Key? key, required this.isActivated})
-    : super(key: key);
+  const StockManagerApp({super.key, required this.isActivated});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class StockManagerApp extends StatelessWidget {
           colorScheme: AppTheme.colorScheme,
           useMaterial3: true,
           textTheme: GoogleFonts.poppinsTextTheme(),
-          scaffoldBackgroundColor: AppTheme.colorScheme.background,
+          scaffoldBackgroundColor: AppTheme.colorScheme.surface,
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.transparent,
             elevation: 0,

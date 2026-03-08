@@ -22,8 +22,8 @@ class AppTheme {
     onSecondary: AppColors.onSecondary,
     error: AppColors.error,
     onError: AppColors.onError,
-    background: AppColors.background,
-    onBackground: AppColors.onBackground,
+    background: AppColors.surface, // Updated to use the new AppColors.surface
+    onBackground: AppColors.onSurface, // Updated to use the new AppColors.onSurface
     surface: AppColors.surface,
     onSurface: AppColors.onSurface,
   );

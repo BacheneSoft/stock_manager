@@ -1,8 +1,8 @@
 import 'package:bachene_soft/utils/permission_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'stock_list_screen.dart';
 import 'clients_list_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:file_picker/file_picker.dart';
@@ -120,6 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await db.insertCloture(cloture);
     await db.resetBenefit(); // Reset benefit after saving to cloture
     await _loadData(); // Reset counters
+    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Clôture effectuée avec succès')),
     );
@@ -793,6 +794,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ),
                                                 );
                                                 if (!await dbFile.exists()) {
+                                                  if (!parentContext.mounted) return;
                                                   ScaffoldMessenger.of(
                                                     parentContext,
                                                   ).showSnackBar(
@@ -812,9 +814,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 }
                                                 await Share.shareXFiles(
                                                   [XFile(dbFile.path)],
-                                                  text: 'Stock Manager Backup',
+                                                  subject: 'Stock Manager Backup',
                                                 );
                                               } catch (e) {
+                                                if (!parentContext.mounted) return;
                                                 ScaffoldMessenger.of(
                                                   parentContext,
                                                 ).showSnackBar(

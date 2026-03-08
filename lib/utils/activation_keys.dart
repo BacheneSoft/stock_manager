@@ -15,7 +15,7 @@ Set<String> get validActivationKeys {
 
   // Use production keys from secrets.dart
   return secrets.productionObfuscatedKeys
-      .map((k) => utf8.decode(base64.decode(k)))
+      .map((String k) => utf8.decode(base64.decode(k)))
       .toSet();
 }
 

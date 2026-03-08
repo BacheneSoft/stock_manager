@@ -48,6 +48,9 @@ dependencies:
   permission_handler: ^11.3.1
   blue_thermal_printer: ^1.1.5
   logger: ^2.6.2
+  path: ^1.9.1
+  intl: ^0.19.0
+  cross_file: ^0.3.4+2
 
 dev_dependencies:
   flutter_test:
