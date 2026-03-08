@@ -68,10 +68,7 @@ class _BenefitReportScreenState extends State<BenefitReportScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           gradient: LinearGradient(
-                            colors: [
-                              Colors.green[700]!,
-                              Colors.green[500]!,
-                            ],
+                            colors: [Colors.green[700]!, Colors.green[500]!],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -195,14 +192,21 @@ class _BenefitReportScreenState extends State<BenefitReportScreen> {
                       itemBuilder: (context, index) {
                         final article = articles[index];
                         final name = article['name'] as String? ?? 'Article';
-                        final totalQtySold = (article['totalQtySold'] as num?)?.toInt() ?? 0;
-                        final avgCostPrice = (article['avgCostPrice'] as num?)?.toDouble() ?? 0;
-                        final avgSellPrice = (article['avgSellPrice'] as num?)?.toDouble() ?? 0;
-                        final totalBenefit = (article['totalBenefit'] as num?)?.toDouble() ?? 0;
-                        final margin = avgSellPrice > 0 
-                            ? ((avgSellPrice - avgCostPrice) / avgSellPrice * 100) 
-                            : 0;
-                        
+                        final totalQtySold =
+                            (article['totalQtySold'] as num?)?.toInt() ?? 0;
+                        final avgCostPrice =
+                            (article['avgCostPrice'] as num?)?.toDouble() ?? 0;
+                        final avgSellPrice =
+                            (article['avgSellPrice'] as num?)?.toDouble() ?? 0;
+                        final totalBenefit =
+                            (article['totalBenefit'] as num?)?.toDouble() ?? 0;
+                        final margin =
+                            avgSellPrice > 0
+                                ? ((avgSellPrice - avgCostPrice) /
+                                    avgSellPrice *
+                                    100)
+                                : 0;
+
                         return Card(
                           elevation: 2,
                           margin: const EdgeInsets.only(bottom: 12),
@@ -258,7 +262,8 @@ class _BenefitReportScreenState extends State<BenefitReportScreen> {
                                 const Divider(height: 1),
                                 const SizedBox(height: 12),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     _buildInfoColumn(
                                       'Qté Vendue',
@@ -301,7 +306,12 @@ class _BenefitReportScreenState extends State<BenefitReportScreen> {
     );
   }
 
-  Widget _buildInfoColumn(String label, String value, IconData icon, {Color? color}) {
+  Widget _buildInfoColumn(
+    String label,
+    String value,
+    IconData icon, {
+    Color? color,
+  }) {
     return Column(
       children: [
         Icon(icon, color: color ?? Colors.grey[600], size: 20),
@@ -316,13 +326,9 @@ class _BenefitReportScreenState extends State<BenefitReportScreen> {
         ),
         Text(
           label,
-          style: GoogleFonts.poppins(
-            fontSize: 10,
-            color: Colors.grey[600],
-          ),
+          style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey[600]),
         ),
       ],
     );
   }
 }
-

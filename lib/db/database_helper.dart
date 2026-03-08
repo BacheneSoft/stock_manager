@@ -309,16 +309,18 @@ class DatabaseHelper {
   Future<int> insertVente(Vente vente) async {
     final db = await database;
     final id = await db.insert('ventes', vente.toMap());
-    
+
     // Calculate paid amount
     final paidAmount = vente.total - vente.credit;
     if (paidAmount > 0) {
-      await insertPayment(Payment(
-        clientId: vente.clientId,
-        amount: paidAmount,
-        date: vente.date,
-        note: 'Vente #$id',
-      ));
+      await insertPayment(
+        Payment(
+          clientId: vente.clientId,
+          amount: paidAmount,
+          date: vente.date,
+          note: 'Vente #$id',
+        ),
+      );
     }
     return id;
   }
@@ -440,14 +442,16 @@ class DatabaseHelper {
   // Distribute a payment across all unpaid ventes for a client
   Future<void> applyPaymentToClientVentes(int clientId, double payment) async {
     final db = await database;
-    
+
     // Log the payment
-    await insertPayment(Payment(
-      clientId: clientId,
-      amount: payment,
-      date: DateTime.now().toIso8601String(),
-      note: 'Paiement dette',
-    ));
+    await insertPayment(
+      Payment(
+        clientId: clientId,
+        amount: payment,
+        date: DateTime.now().toIso8601String(),
+        note: 'Paiement dette',
+      ),
+    );
 
     // Get all unpaid ventes for the client, ordered by date
     final ventes = await db.query(
@@ -593,11 +597,7 @@ class DatabaseHelper {
 
   Future<String?> getLastClotureDate() async {
     final db = await database;
-    final result = await db.query(
-      'cloture',
-      orderBy: 'date DESC',
-      limit: 1,
-    );
+    final result = await db.query('cloture', orderBy: 'date DESC', limit: 1);
     if (result.isNotEmpty) {
       return result.first['date'] as String;
     }
@@ -609,7 +609,7 @@ class DatabaseHelper {
     final db = await database;
     String whereClause = '';
     List<dynamic> whereArgs = [];
-    
+
     if (date != null) {
       whereClause = 'WHERE date > ?';
       whereArgs = [date];
@@ -626,7 +626,7 @@ class DatabaseHelper {
     final db = await database;
     String whereClause = '';
     List<dynamic> whereArgs = [];
-    
+
     if (date != null) {
       whereClause = 'WHERE date > ?';
       whereArgs = [date];
@@ -655,11 +655,9 @@ class DatabaseHelper {
   // This is called during clôture to reset the benefit counter
   Future<void> resetBenefit() async {
     final db = await database;
-    await db.update(
-      'vente_articles',
-      {'costPrice': 0.0},
-      where: 'costPrice > 0',
-    );
+    await db.update('vente_articles', {
+      'costPrice': 0.0,
+    }, where: 'costPrice > 0');
   }
 
   // Get benefit breakdown by article
@@ -688,4 +686,3 @@ class DatabaseHelper {
     db.close();
   }
 }
-

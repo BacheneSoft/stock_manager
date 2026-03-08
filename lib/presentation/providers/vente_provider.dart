@@ -22,7 +22,8 @@ class VenteProvider extends ChangeNotifier {
       // For simplicity in demo, we check total sales count or list length
       final allSales = await _repository.getVentesByClient(vente.clientId);
       if (allSales.length >= AppConfig.maxSaleLimit) {
-        const error = 'Demo Limit Reached: Maximum ${AppConfig.maxSaleLimit} sales allowed in Demo Mode.';
+        const error =
+            'Demo Limit Reached: Maximum ${AppConfig.maxSaleLimit} sales allowed in Demo Mode.';
         LoggerService.w(error);
         throw Exception(error);
       }
@@ -51,7 +52,10 @@ class VenteProvider extends ChangeNotifier {
     return await _repository.getVenteArticles(venteId);
   }
 
-  Future<void> updateVente(Vente vente, List<VenteArticle> venteArticles) async {
+  Future<void> updateVente(
+    Vente vente,
+    List<VenteArticle> venteArticles,
+  ) async {
     await _repository.updateVente(vente);
     // Remove old vente_articles and add new ones
     await _repository.deleteVenteArticles(vente.id!);
@@ -66,4 +70,3 @@ class VenteProvider extends ChangeNotifier {
     await loadVentes(clientId);
   }
 }
-

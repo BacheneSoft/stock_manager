@@ -148,4 +148,3 @@ class _ActivationScreenState extends State<ActivationScreen> {
     );
   }
 }
-

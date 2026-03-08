@@ -19,7 +19,8 @@ import 'data/repositories/category_repository.dart';
 class StockManagerApp extends StatelessWidget {
   final bool isActivated;
 
-  const StockManagerApp({Key? key, required this.isActivated}) : super(key: key);
+  const StockManagerApp({Key? key, required this.isActivated})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,9 @@ class StockManagerApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CategoryProvider(categoryRepo)),
         ChangeNotifierProvider(create: (_) => ClientProvider(clientRepo)),
         ChangeNotifierProvider(create: (_) => VenteProvider(venteRepo)),
-        ChangeNotifierProvider(create: (_) => FournisseurProvider(fournisseurRepo)),
+        ChangeNotifierProvider(
+          create: (_) => FournisseurProvider(fournisseurRepo),
+        ),
       ],
       child: MaterialApp(
         title: 'Stock Manager',

@@ -141,18 +141,18 @@ class _ArticlesListScreenState extends State<ArticlesListScreen> {
                   },
                 )
                 : Hero(
-                    tag: 'app_title',
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        'Articles',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                  tag: 'app_title',
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Text(
+                      'Articles',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
+                ),
         actions: [
           if (!_isSearching)
             IconButton(
@@ -285,4 +285,3 @@ class _ArticlesListScreenState extends State<ArticlesListScreen> {
     );
   }
 }
-

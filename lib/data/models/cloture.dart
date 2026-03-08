@@ -32,7 +32,8 @@ class Cloture {
       date: map['date'] as String,
       montant: (map['montant'] as num).toDouble(),
       calculatedCA: (map['calculated_ca'] as num).toDouble(),
-      calculatedEncaissement: (map['calculated_encaissement'] as num).toDouble(),
+      calculatedEncaissement:
+          (map['calculated_encaissement'] as num).toDouble(),
       calculatedBenefit: (map['calculated_benefit'] as num?)?.toDouble() ?? 0,
     );
   }

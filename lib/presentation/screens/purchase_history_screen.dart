@@ -190,15 +190,11 @@ class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
                   final filteredPurchases = _getFilteredPurchases();
 
                   final totalSuppliers =
-                      filteredPurchases
-                          .map((p) => p.supplier)
-                          .toSet()
-                          .length;
+                      filteredPurchases.map((p) => p.supplier).toSet().length;
                   final totalArticles = filteredPurchases.length;
                   final totalValue = filteredPurchases.fold(
                     0.0,
-                    (sum, p) =>
-                        sum + (p.buyPrice * p.quantity),
+                    (sum, p) => sum + (p.buyPrice * p.quantity),
                   );
 
                   return Card(
@@ -242,181 +238,184 @@ class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
             ),
             const SizedBox(height: 16),
             Expanded(
-              child: _isLoading
-                  ? const Center(child: CircularProgressIndicator())
-                  : _purchases.isEmpty
+              child:
+                  _isLoading
+                      ? const Center(child: CircularProgressIndicator())
+                      : _purchases.isEmpty
                       ? Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.history,
-                                size: 80,
-                                color: theme.colorScheme.primary.withOpacity(0.7),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.history,
+                              size: 80,
+                              color: theme.colorScheme.primary.withOpacity(0.7),
+                            ),
+                            const SizedBox(height: 24),
+                            Text(
+                              _searchQuery.isNotEmpty ||
+                                      _selectedSupplier.isNotEmpty
+                                  ? 'Aucun résultat'
+                                  : 'Aucun historique d\'achat',
+                              style: GoogleFonts.poppins(
+                                fontSize: 22,
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w600,
                               ),
-                              const SizedBox(height: 24),
-                              Text(
-                                _searchQuery.isNotEmpty ||
-                                        _selectedSupplier.isNotEmpty
-                                    ? 'Aucun résultat'
-                                    : 'Aucun historique d\'achat',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 22,
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      : ListView.builder(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          itemCount: _getFilteredPurchases().length,
-                          itemBuilder: (context, index) {
-                            final purchase = _getFilteredPurchases()[index];
-                            final purchaseValue =
-                                purchase.buyPrice * purchase.quantity;
-
-                      return Card(
-                        margin: const EdgeInsets.symmetric(vertical: 6),
-                        elevation: 4,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                            ),
+                          ],
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
+                      )
+                      : ListView.builder(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        itemCount: _getFilteredPurchases().length,
+                        itemBuilder: (context, index) {
+                          final purchase = _getFilteredPurchases()[index];
+                          final purchaseValue =
+                              purchase.buyPrice * purchase.quantity;
+
+                          return Card(
+                            margin: const EdgeInsets.symmetric(vertical: 6),
+                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Expanded(
-                                          child: Text(
-                                            purchase.articleName,
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          purchase.articleName,
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                            color: Colors.black87,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 12,
+                                          vertical: 6,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue.withOpacity(0.1),
+                                          borderRadius: BorderRadius.circular(
+                                            20,
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.blue,
+                                            width: 1,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          '${purchase.quantity} achetés',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 12,
+                                            color: Colors.blue,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.store,
+                                                  size: 16,
+                                                  color: Colors.grey[600],
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  purchase.supplier,
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[600],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 4),
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.attach_money_outlined,
+                                                  size: 16,
+                                                  color: Colors.grey[600],
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  'Prix d\'achat: ${Formatters.formatCurrency(purchase.buyPrice)} DA',
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[600],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 4),
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.calendar_today,
+                                                  size: 16,
+                                                  color: Colors.grey[600],
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  'Acheté le: ${purchase.purchaseDate}',
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[600],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Text(
+                                            'Valeur achat',
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 12,
+                                              color: Colors.grey[600],
+                                            ),
+                                          ),
+                                          Text(
+                                            '${Formatters.formatCurrency(purchaseValue)} DA',
                                             style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 16,
-                                              color: Colors.black87,
+                                              color: theme.colorScheme.primary,
                                             ),
                                           ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: 12,
-                                            vertical: 6,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: Colors.blue.withOpacity(0.1),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: Colors.blue,
-                                              width: 1,
-                                            ),
-                                          ),
-                                          child: Text(
-                                            '${purchase.quantity} achetés',
-                                            style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 12,
-                                              color: Colors.blue,
-                                            ),
-                                          ),
-                                        ),
-                                ],
-                              ),
-                              const SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.store,
-                                              size: 16,
-                                              color: Colors.grey[600],
-                                            ),
-                                            const SizedBox(width: 4),
-                                            Text(
-                                              purchase.supplier,
-                                              style: GoogleFonts.poppins(
-                                                fontSize: 12,
-                                                color: Colors.grey[600],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.attach_money_outlined,
-                                              size: 16,
-                                              color: Colors.grey[600],
-                                            ),
-                                            const SizedBox(width: 4),
-                                            Text(
-                                              'Prix d\'achat: ${Formatters.formatCurrency(purchase.buyPrice)} DA',
-                                              style: GoogleFonts.poppins(
-                                                fontSize: 12,
-                                                color: Colors.grey[600],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.calendar_today,
-                                              size: 16,
-                                              color: Colors.grey[600],
-                                            ),
-                                            const SizedBox(width: 4),
-                                            Text(
-                                              'Acheté le: ${purchase.purchaseDate}',
-                                              style: GoogleFonts.poppins(
-                                                fontSize: 12,
-                                                color: Colors.grey[600],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        'Valeur achat',
-                                        style: GoogleFonts.poppins(
-                                          fontSize: 12,
-                                          color: Colors.grey[600],
-                                        ),
-                                      ),
-                                      Text(
-                                        '${Formatters.formatCurrency(purchaseValue)} DA',
-                                        style: GoogleFonts.poppins(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16,
-                                          color: theme.colorScheme.primary,
-                                        ),
+                                        ],
                                       ),
                                     ],
                                   ),
                                 ],
                               ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                            ),
+                          );
+                        },
+                      ),
             ),
           ],
         ),
@@ -432,14 +431,9 @@ class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
               p.articleName.toLowerCase().contains(_searchQuery.toLowerCase()),
         )
         .where(
-          (p) =>
-              _selectedSupplier.isEmpty ||
-              p.supplier == _selectedSupplier,
+          (p) => _selectedSupplier.isEmpty || p.supplier == _selectedSupplier,
         )
-        .where(
-          (p) =>
-              _selectedDate.isEmpty || p.purchaseDate == _selectedDate,
-        )
+        .where((p) => _selectedDate.isEmpty || p.purchaseDate == _selectedDate)
         .toList();
   }
 
@@ -469,4 +463,3 @@ class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
     );
   }
 }
-

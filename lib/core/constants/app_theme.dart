@@ -28,4 +28,3 @@ class AppTheme {
     onSurface: AppColors.onSurface,
   );
 }
-

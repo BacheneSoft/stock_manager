@@ -19,7 +19,8 @@ class ClientProvider extends ChangeNotifier {
 
   Future<void> addClient(Client client) async {
     if (AppConfig.isDemoMode && _clients.length >= 20) {
-      const error = 'Demo Limit Reached: Maximum 20 clients allowed in Demo Mode.';
+      const error =
+          'Demo Limit Reached: Maximum 20 clients allowed in Demo Mode.';
       LoggerService.w(error);
       throw Exception(error);
     }
@@ -43,11 +44,13 @@ class ClientProvider extends ChangeNotifier {
   }
 
   // UI Alias
-  Future<void> applyPaymentToClientVentes(int clientId, double amount) => applyPayment(clientId, amount);
+  Future<void> applyPaymentToClientVentes(int clientId, double amount) =>
+      applyPayment(clientId, amount);
 
   Future<double> getClientCredit(int clientId) async {
     return await _repository.getClientCredit(clientId);
   }
+
   Future<void> useClientCredit(int clientId, double amount) async {
     await _repository.useClientCredit(clientId, amount);
     await loadClients();

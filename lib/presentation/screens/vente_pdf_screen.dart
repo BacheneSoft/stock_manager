@@ -49,7 +49,10 @@ class _VentePdfScreenState extends State<VentePdfScreen> {
   }
 
   Future<void> _generatePdf() async {
-    venteArticles = await Provider.of<VenteProvider>(context, listen: false).getVenteArticles(widget.vente.id!);
+    venteArticles = await Provider.of<VenteProvider>(
+      context,
+      listen: false,
+    ).getVenteArticles(widget.vente.id!);
     allArticles = Provider.of<ArticleProvider>(context, listen: false).articles;
     final pdf = pw.Document();
 
@@ -73,7 +76,9 @@ class _VentePdfScreenState extends State<VentePdfScreen> {
               ),
               pw.SizedBox(height: 8),
               pw.Text('Client: ${widget.client.name}'),
-              pw.Text('Date: ${widget.vente.date.length > 10 ? widget.vente.date.substring(0, 10) : widget.vente.date}'),
+              pw.Text(
+                'Date: ${widget.vente.date.length > 10 ? widget.vente.date.substring(0, 10) : widget.vente.date}',
+              ),
               pw.Text('Payé: ${widget.vente.isPaid ? "Oui" : "Non"}'),
               if (!widget.vente.isPaid) ...[
                 pw.Text(
@@ -232,9 +237,10 @@ class _VentePdfScreenState extends State<VentePdfScreen> {
                                   }).toList();
                               final ticket = ReceiptPrinter.buildTicket(
                                 clientName: widget.client.name,
-                                date: widget.vente.date.length > 10
-                                    ? widget.vente.date.substring(0, 10)
-                                    : widget.vente.date,
+                                date:
+                                    widget.vente.date.length > 10
+                                        ? widget.vente.date.substring(0, 10)
+                                        : widget.vente.date,
                                 isPaid: widget.vente.isPaid,
                                 credit: widget.vente.credit,
                                 items: items,
@@ -465,7 +471,10 @@ class _VentePdfScreenState extends State<VentePdfScreen> {
                     onPressed: _showBluetoothPrintDialog,
                   ),
                   IconButton(
-                    icon: const Icon(Icons.table_chart_rounded, color: Colors.white),
+                    icon: const Icon(
+                      Icons.table_chart_rounded,
+                      color: Colors.white,
+                    ),
                     tooltip: 'Exporter en CSV',
                     onPressed: _generateAndSaveCsv,
                   ),
@@ -532,4 +541,3 @@ class _VentePdfScreenState extends State<VentePdfScreen> {
     );
   }
 }
-

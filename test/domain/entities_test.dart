@@ -33,21 +33,24 @@ void main() {
       expect(client.credit, 100.0);
     });
 
-    test('Article.copyWith should return a new instance with updated values', () {
-      final article = Article(
-        name: 'Initial',
-        provider: 'Prov',
-        buyPrice: 10.0,
-        sellPrice: 15.0,
-        quantity: 1,
-        purchaseDate: '2026-01-01',
-        categoryId: 1,
-      );
+    test(
+      'Article.copyWith should return a new instance with updated values',
+      () {
+        final article = Article(
+          name: 'Initial',
+          provider: 'Prov',
+          buyPrice: 10.0,
+          sellPrice: 15.0,
+          quantity: 1,
+          purchaseDate: '2026-01-01',
+          categoryId: 1,
+        );
 
-      final updated = article.copyWith(name: 'Updated');
+        final updated = article.copyWith(name: 'Updated');
 
-      expect(updated.name, 'Updated');
-      expect(updated.provider, article.provider);
-    });
+        expect(updated.name, 'Updated');
+        expect(updated.provider, article.provider);
+      },
+    );
   });
 }

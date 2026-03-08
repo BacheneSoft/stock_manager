@@ -171,4 +171,3 @@ class _AddClientScreenState extends State<AddClientScreen> {
     );
   }
 }
-

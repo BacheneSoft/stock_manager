@@ -306,4 +306,3 @@ class _AddArticleScreenState extends State<AddArticleScreen> {
     );
   }
 }
-

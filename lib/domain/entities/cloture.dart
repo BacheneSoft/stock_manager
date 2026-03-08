@@ -17,7 +17,4 @@ class Cloture {
     required this.calculatedEncaissement,
     this.calculatedBenefit = 0,
   });
-
-
 }
-

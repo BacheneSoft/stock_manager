@@ -29,4 +29,3 @@ class Client {
     credit: (map['credit'] as num?)?.toDouble() ?? 0,
   );
 }
-

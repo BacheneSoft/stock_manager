@@ -11,12 +11,16 @@ class FournisseurRepository implements IFournisseurRepository {
   @override
   Future<List<Fournisseur>> getFournisseurs() async {
     final models = await _dbHelper.getFournisseurs();
-    return models.map((m) => Fournisseur(
-      id: m.id,
-      name: m.name,
-      phone: m.phone,
-      address: m.address,
-    )).toList();
+    return models
+        .map(
+          (m) => Fournisseur(
+            id: m.id,
+            name: m.name,
+            phone: m.phone,
+            address: m.address,
+          ),
+        )
+        .toList();
   }
 
   @override

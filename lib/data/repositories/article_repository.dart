@@ -15,16 +15,20 @@ class ArticleRepository implements IArticleRepository {
   Future<List<Article>> getArticles() async {
     LoggerService.i('Fetching all articles from database');
     final models = await _dbHelper.getArticles();
-    return models.map((m) => Article(
-      id: m.id,
-      name: m.name,
-      provider: m.provider,
-      buyPrice: m.buyPrice,
-      sellPrice: m.sellPrice,
-      quantity: m.quantity,
-      categoryId: m.categoryId,
-      purchaseDate: m.purchaseDate,
-    )).toList();
+    return models
+        .map(
+          (m) => Article(
+            id: m.id,
+            name: m.name,
+            provider: m.provider,
+            buyPrice: m.buyPrice,
+            sellPrice: m.sellPrice,
+            quantity: m.quantity,
+            categoryId: m.categoryId,
+            purchaseDate: m.purchaseDate,
+          ),
+        )
+        .toList();
   }
 
   @override
@@ -65,29 +69,35 @@ class ArticleRepository implements IArticleRepository {
 
   @override
   Future<void> addPurchase(Purchase p) async {
-    await _dbHelper.insertPurchase(model_p.Purchase(
-      articleId: p.articleId,
-      articleName: p.articleName,
-      supplier: p.supplier,
-      buyPrice: p.buyPrice,
-      sellPrice: p.sellPrice,
-      quantity: p.quantity,
-      purchaseDate: p.purchaseDate,
-    ));
+    await _dbHelper.insertPurchase(
+      model_p.Purchase(
+        articleId: p.articleId,
+        articleName: p.articleName,
+        supplier: p.supplier,
+        buyPrice: p.buyPrice,
+        sellPrice: p.sellPrice,
+        quantity: p.quantity,
+        purchaseDate: p.purchaseDate,
+      ),
+    );
   }
 
   @override
   Future<List<Purchase>> getPurchases() async {
     final models = await _dbHelper.getPurchases();
-    return models.map((m) => Purchase(
-      id: m.id,
-      articleId: m.articleId,
-      articleName: m.articleName,
-      supplier: m.supplier,
-      buyPrice: m.buyPrice,
-      sellPrice: m.sellPrice,
-      quantity: m.quantity,
-      purchaseDate: m.purchaseDate,
-    )).toList();
+    return models
+        .map(
+          (m) => Purchase(
+            id: m.id,
+            articleId: m.articleId,
+            articleName: m.articleName,
+            supplier: m.supplier,
+            buyPrice: m.buyPrice,
+            sellPrice: m.sellPrice,
+            quantity: m.quantity,
+            purchaseDate: m.purchaseDate,
+          ),
+        )
+        .toList();
   }
 }

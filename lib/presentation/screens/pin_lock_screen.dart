@@ -311,4 +311,3 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
     );
   }
 }
-

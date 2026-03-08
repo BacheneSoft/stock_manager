@@ -35,7 +35,10 @@ class _ClientDetailsScreenState extends State<ClientDetailsScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return FutureBuilder<double>(
-      future: Provider.of<ClientProvider>(context, listen: false).getClientCredit(widget.client.id!),
+      future: Provider.of<ClientProvider>(
+        context,
+        listen: false,
+      ).getClientCredit(widget.client.id!),
       builder: (context, creditSnapshot) {
         final currentCredit = creditSnapshot.data ?? widget.client.credit;
         final client = Provider.of<ClientProvider>(context).clients.firstWhere(
@@ -361,7 +364,10 @@ class _ClientDetailsScreenState extends State<ClientDetailsScreen> {
                                           },
                                         );
                                         if (result != null && result > 0) {
-                                          await Provider.of<ClientProvider>(context, listen: false).applyPaymentToClientVentes(
+                                          await Provider.of<ClientProvider>(
+                                            context,
+                                            listen: false,
+                                          ).applyPaymentToClientVentes(
                                             client.id!,
                                             result,
                                           );
@@ -508,7 +514,8 @@ class _ClientDetailsScreenState extends State<ClientDetailsScreen> {
                               final matchesDate =
                                   _selectedDate == null ||
                                   vente.date.startsWith(
-                                      '${_selectedDate!.year}-${_selectedDate!.month.toString().padLeft(2, '0')}-${_selectedDate!.day.toString().padLeft(2, '0')}');
+                                    '${_selectedDate!.year}-${_selectedDate!.month.toString().padLeft(2, '0')}-${_selectedDate!.day.toString().padLeft(2, '0')}',
+                                  );
                               final matchesPaid =
                                   _paidFilter == null ||
                                   (_paidFilter == 'paid' && vente.isPaid) ||
@@ -745,4 +752,3 @@ class _ClientDetailsScreenState extends State<ClientDetailsScreen> {
     );
   }
 }
-

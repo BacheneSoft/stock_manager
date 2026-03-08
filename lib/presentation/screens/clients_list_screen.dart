@@ -100,18 +100,18 @@ class _ClientsListScreenState extends State<ClientsListScreen> {
                   },
                 )
                 : Hero(
-                    tag: 'app_title',
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        'Clients',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                  tag: 'app_title',
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Text(
+                      'Clients',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
+                ),
         actions: [
           if (!_isSearching)
             IconButton(
@@ -341,4 +341,3 @@ class _ClientsListScreenState extends State<ClientsListScreen> {
     );
   }
 }
-

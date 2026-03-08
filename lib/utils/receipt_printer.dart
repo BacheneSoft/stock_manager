@@ -57,4 +57,3 @@ class ReceiptPrinter {
     await _printer.disconnect();
   }
 }
-

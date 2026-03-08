@@ -11,18 +11,12 @@ class CategoryRepository implements ICategoryRepository {
   @override
   Future<List<Category>> getCategories() async {
     final models = await _dbHelper.getCategories();
-    return models.map((m) => Category(
-      id: m.id,
-      name: m.name,
-    )).toList();
+    return models.map((m) => Category(id: m.id, name: m.name)).toList();
   }
 
   @override
   Future<int> insertCategory(Category category) async {
-    final m = model.Category(
-      id: category.id,
-      name: category.name,
-    );
+    final m = model.Category(id: category.id, name: category.name);
     return await _dbHelper.insertCategory(m);
   }
 }

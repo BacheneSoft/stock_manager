@@ -12,7 +12,7 @@ Set<String> get validActivationKeys {
   if (AppConfig.isDemoMode) {
     return _demoKeys.map((k) => utf8.decode(base64.decode(k))).toSet();
   }
-  
+
   // Use production keys from secrets.dart
   return secrets.productionObfuscatedKeys
       .map((k) => utf8.decode(base64.decode(k)))

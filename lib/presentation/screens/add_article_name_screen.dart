@@ -69,14 +69,16 @@ class _AddArticleNameScreenState extends State<AddArticleNameScreen> {
                   await Provider.of<ArticleProvider>(
                     context,
                     listen: false,
-                  ).addArticle(Article(
-                    name: _name,
-                    provider: '', // Default or handled by repo
-                    buyPrice: 0.0,
-                    sellPrice: 0.0,
-                    quantity: 0,
-                    categoryId: 0, // Default or handled by repo
-                  ));
+                  ).addArticle(
+                    Article(
+                      name: _name,
+                      provider: '', // Default or handled by repo
+                      buyPrice: 0.0,
+                      sellPrice: 0.0,
+                      quantity: 0,
+                      categoryId: 0, // Default or handled by repo
+                    ),
+                  );
                   ScaffoldMessenger.of(
                     context,
                   ).showSnackBar(SnackBar(content: Text('Article ajouté!')));
@@ -105,4 +107,3 @@ class _AddArticleNameScreenState extends State<AddArticleNameScreen> {
     );
   }
 }
-

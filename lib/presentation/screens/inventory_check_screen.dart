@@ -44,14 +44,18 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
   }
 
   Future<void> _handleValider() async {
-    final articleProvider = Provider.of<ArticleProvider>(context, listen: false);
+    final articleProvider = Provider.of<ArticleProvider>(
+      context,
+      listen: false,
+    );
     final venteProvider = Provider.of<VenteProvider>(context, listen: false);
     final clientProvider = Provider.of<ClientProvider>(context, listen: false);
-    
-    final articlesToAdjust = articleProvider.articles.where((a) {
-      final rest = _restQuantities[a.id];
-      return rest != null && rest < a.quantity;
-    }).toList();
+
+    final articlesToAdjust =
+        articleProvider.articles.where((a) {
+          final rest = _restQuantities[a.id];
+          return rest != null && rest < a.quantity;
+        }).toList();
 
     if (articlesToAdjust.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -67,14 +71,17 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
       final clients = clientProvider.clients;
       Client? inventoryClient = clients.firstWhere(
         (c) => c.name == 'Inventaire / Vente Manuelle',
-        orElse: () => Client(name: 'Inventaire / Vente Manuelle', phone: '0000'),
+        orElse:
+            () => Client(name: 'Inventaire / Vente Manuelle', phone: '0000'),
       );
 
       if (inventoryClient.id == null) {
         await clientProvider.addClient(inventoryClient);
         // Refresh to get ID (though better if addClient returned it or updated the object)
         await clientProvider.loadClients();
-        inventoryClient = clientProvider.clients.firstWhere((c) => c.name == 'Inventaire / Vente Manuelle');
+        inventoryClient = clientProvider.clients.firstWhere(
+          (c) => c.name == 'Inventaire / Vente Manuelle',
+        );
       }
       final int clientId = inventoryClient.id!;
 
@@ -86,16 +93,18 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
         final currentQty = article.quantity;
         final restQty = _restQuantities[article.id]!;
         final qtySold = currentQty - restQty;
-        
+
         totalVente += qtySold * article.sellPrice;
-        
-        venteArticles.add(VenteArticle(
-          venteId: 0, 
-          articleId: article.id!,
-          quantity: qtySold,
-          price: article.sellPrice,
-          costPrice: article.buyPrice,
-        ));
+
+        venteArticles.add(
+          VenteArticle(
+            venteId: 0,
+            articleId: article.id!,
+            quantity: qtySold,
+            price: article.sellPrice,
+            costPrice: article.buyPrice,
+          ),
+        );
       }
 
       final vente = Vente(
@@ -112,16 +121,18 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
       // 3. Update Article quantities
       for (var article in articlesToAdjust) {
         final restQty = _restQuantities[article.id]!;
-        await articleProvider.updateArticle(Article(
-          id: article.id,
-          name: article.name,
-          provider: article.provider,
-          buyPrice: article.buyPrice,
-          sellPrice: article.sellPrice,
-          quantity: restQty,
-          categoryId: article.categoryId,
-          purchaseDate: article.purchaseDate,
-        ));
+        await articleProvider.updateArticle(
+          Article(
+            id: article.id,
+            name: article.name,
+            provider: article.provider,
+            buyPrice: article.buyPrice,
+            sellPrice: article.sellPrice,
+            quantity: restQty,
+            categoryId: article.categoryId,
+            purchaseDate: article.purchaseDate,
+          ),
+        );
       }
 
       // 4. Success feedback
@@ -136,9 +147,9 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Erreur: $e')));
       }
     } finally {
       if (mounted) setState(() => _isSaving = false);
@@ -148,16 +159,19 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
   void _showSuccessDialog(double total) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Ajustement Réussi'),
-        content: Text('Le stock a été mis à jour.\nTotal vente générée: ${Formatters.formatCurrency(total)} DA'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Ajustement Réussi'),
+            content: Text(
+              'Le stock a été mis à jour.\nTotal vente générée: ${Formatters.formatCurrency(total)} DA',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('OK'),
+              ),
+            ],
           ),
-        ],
-      ),
     );
   }
 
@@ -165,14 +179,21 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final articleProvider = Provider.of<ArticleProvider>(context);
-    
-    final filteredArticles = articleProvider.articles.where((a) {
-      return a.name.toLowerCase().contains(_searchQuery.toLowerCase());
-    }).toList();
+
+    final filteredArticles =
+        articleProvider.articles.where((a) {
+          return a.name.toLowerCase().contains(_searchQuery.toLowerCase());
+        }).toList();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stock Rest - المخزون المتبقي', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white)),
+        title: Text(
+          'Stock Rest - المخزون المتبقي',
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: theme.colorScheme.primary,
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
@@ -181,7 +202,9 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const InventoryHistoryScreen()),
+                MaterialPageRoute(
+                  builder: (context) => const InventoryHistoryScreen(),
+                ),
               );
             },
             tooltip: 'Historique',
@@ -196,7 +219,9 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
               decoration: InputDecoration(
                 labelText: 'Rechercher un article...',
                 prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
               onChanged: (v) => setState(() => _searchQuery = v),
             ),
@@ -209,12 +234,20 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
                 if (!_controllers.containsKey(article.id)) {
                   _controllers[article.id!] = TextEditingController();
                 }
-                
+
                 return Card(
-                  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                   child: ListTile(
-                    title: Text(article.name, style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
-                    subtitle: Text('En stock: ${article.quantity} | Prix: ${Formatters.formatCurrency(article.sellPrice)} DA'),
+                    title: Text(
+                      article.name,
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                    ),
+                    subtitle: Text(
+                      'En stock: ${article.quantity} | Prix: ${Formatters.formatCurrency(article.sellPrice)} DA',
+                    ),
                     trailing: SizedBox(
                       width: 100,
                       child: TextField(
@@ -247,11 +280,21 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 backgroundColor: theme.colorScheme.primary,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
-              child: _isSaving 
-                ? const CircularProgressIndicator(color: Colors.white)
-                : Text('Valider l\'ajustement', style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+              child:
+                  _isSaving
+                      ? const CircularProgressIndicator(color: Colors.white)
+                      : Text(
+                        'Valider l\'ajustement',
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
             ),
           ),
         ],
@@ -259,4 +302,3 @@ class _InventoryCheckScreenState extends State<InventoryCheckScreen> {
     );
   }
 }
-

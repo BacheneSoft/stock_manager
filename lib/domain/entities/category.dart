@@ -7,4 +7,3 @@ class Category {
 
   Category({this.id, required this.name});
 }
-

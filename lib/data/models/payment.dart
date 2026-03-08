@@ -1,6 +1,7 @@
 class Payment {
   final int? id;
-  final int? clientId; // Nullable for anonymous sales if needed, but usually linked
+  final int?
+  clientId; // Nullable for anonymous sales if needed, but usually linked
   final double amount;
   final String date;
   final String? note;

@@ -364,4 +364,3 @@ class _CheckStockScreenState extends State<CheckStockScreen> {
     );
   }
 }
-

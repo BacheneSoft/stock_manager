@@ -9,7 +9,6 @@ class Fournisseur {
 
   Fournisseur({this.id, required this.name, required this.phone, this.address});
 
-
   Fournisseur copyWith({
     int? id,
     String? name,
@@ -24,4 +23,3 @@ class Fournisseur {
     );
   }
 }
-

@@ -58,43 +58,53 @@ class _HomeScreenState extends State<HomeScreen> {
     final amountController = TextEditingController();
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Clôture de la caisse'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('Chiffre d\'affaire: ${Formatters.formatCurrency(_turnover)}'),
-            Text('Encaissement: ${Formatters.formatCurrency(_collections)}'),
-            Text('Bénéfice cumulé: ${Formatters.formatCurrency(_benefit)}', 
-              style: TextStyle(color: Colors.green[700], fontWeight: FontWeight.bold)),
-            const SizedBox(height: 16),
-            TextField(
-              controller: amountController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Montant en caisse',
-                border: OutlineInputBorder(),
-              ),
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Clôture de la caisse'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Chiffre d\'affaire: ${Formatters.formatCurrency(_turnover)}',
+                ),
+                Text(
+                  'Encaissement: ${Formatters.formatCurrency(_collections)}',
+                ),
+                Text(
+                  'Bénéfice cumulé: ${Formatters.formatCurrency(_benefit)}',
+                  style: TextStyle(
+                    color: Colors.green[700],
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: amountController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Montant en caisse',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Annuler'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Annuler'),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  final amount = double.tryParse(amountController.text);
+                  if (amount != null) {
+                    await _performCloture(amount);
+                    Navigator.pop(context);
+                  }
+                },
+                child: const Text('Valider'),
+              ),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () async {
-              final amount = double.tryParse(amountController.text);
-              if (amount != null) {
-                await _performCloture(amount);
-                Navigator.pop(context);
-              }
-            },
-            child: const Text('Valider'),
-          ),
-        ],
-      ),
     );
   }
 
@@ -141,7 +151,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (AppConfig.isDemoMode)
                   Container(
                     margin: const EdgeInsets.only(left: 8),
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 6,
+                      vertical: 2,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.amber,
                       borderRadius: BorderRadius.circular(4),
@@ -452,7 +465,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.grey[350],
-                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 16,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14),
                                 ),
@@ -465,7 +480,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const ArticlesListScreen(),
+                                    builder:
+                                        (context) => const ArticlesListScreen(),
                                   ),
                                 ).then((_) => _loadData());
                               },
@@ -498,7 +514,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.grey[350],
-                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 16,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14),
                                 ),
@@ -511,7 +529,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const StockEntryScreen(),
+                                    builder:
+                                        (context) => const StockEntryScreen(),
                                   ),
                                 ).then((_) => _loadData());
                               },
@@ -537,7 +556,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFFFFF3E0),
-                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 16,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14),
                                 ),
@@ -550,7 +571,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const InventoryCheckScreen(),
+                                    builder:
+                                        (context) =>
+                                            const InventoryCheckScreen(),
                                   ),
                                 ).then((_) => _loadData());
                               },
@@ -576,7 +599,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xFFD9F4E9),
-                                padding: const EdgeInsets.symmetric(vertical: 16),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 16,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14),
                                 ),
@@ -589,7 +614,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const ClientsListScreen(),
+                                    builder:
+                                        (context) => const ClientsListScreen(),
                                   ),
                                 ).then((_) => _loadData());
                               },
@@ -665,7 +691,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             GoogleFonts.poppins(),
                                                       ),
                                                       backgroundColor:
-                                                          theme.colorScheme.error,
+                                                          theme
+                                                              .colorScheme
+                                                              .error,
                                                     ),
                                                   );
                                                   return;
@@ -703,7 +731,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             GoogleFonts.poppins(),
                                                       ),
                                                       backgroundColor:
-                                                          theme.colorScheme.primary,
+                                                          theme
+                                                              .colorScheme
+                                                              .primary,
                                                     ),
                                                   );
                                                 }
@@ -714,7 +744,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   SnackBar(
                                                     content: Text(
                                                       'Export error: $e - خطأ في التصدير: $e',
-                                                      style: GoogleFonts.poppins(),
+                                                      style:
+                                                          GoogleFonts.poppins(),
                                                     ),
                                                     backgroundColor:
                                                         theme.colorScheme.error,
@@ -746,7 +777,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             GoogleFonts.poppins(),
                                                       ),
                                                       backgroundColor:
-                                                          theme.colorScheme.error,
+                                                          theme
+                                                              .colorScheme
+                                                              .error,
                                                     ),
                                                   );
                                                   return;
@@ -770,14 +803,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             GoogleFonts.poppins(),
                                                       ),
                                                       backgroundColor:
-                                                          theme.colorScheme.error,
+                                                          theme
+                                                              .colorScheme
+                                                              .error,
                                                     ),
                                                   );
                                                   return;
                                                 }
-                                                await Share.shareXFiles([
-                                                  XFile(dbFile.path),
-                                                ], text: 'Stock Manager Backup');
+                                                await Share.shareXFiles(
+                                                  [XFile(dbFile.path)],
+                                                  text: 'Stock Manager Backup',
+                                                );
                                               } catch (e) {
                                                 ScaffoldMessenger.of(
                                                   parentContext,
@@ -785,7 +821,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   SnackBar(
                                                     content: Text(
                                                       'Export error: $e - خطأ في التصدير: $e',
-                                                      style: GoogleFonts.poppins(),
+                                                      style:
+                                                          GoogleFonts.poppins(),
                                                     ),
                                                     backgroundColor:
                                                         theme.colorScheme.error,
@@ -804,7 +841,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                               label: Text(
                                 'Exporter',
-                                style: GoogleFonts.poppins(color: const Color(0xFF141E46),),
+                                style: GoogleFonts.poppins(
+                                  color: const Color(0xFF141E46),
+                                ),
                               ),
                             ),
                             ElevatedButton.icon(
@@ -846,7 +885,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Base de données restaurée avec succès. - تم استعادة قاعدة البيانات بنجاح.',
                                         style: GoogleFonts.poppins(),
                                       ),
-                                      backgroundColor: theme.colorScheme.primary,
+                                      backgroundColor:
+                                          theme.colorScheme.primary,
                                     ),
                                   );
                                   // Reload data after restore
@@ -956,7 +996,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
@@ -1013,4 +1052,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

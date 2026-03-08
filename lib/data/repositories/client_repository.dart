@@ -11,13 +11,17 @@ class ClientRepository implements IClientRepository {
   @override
   Future<List<Client>> getClients() async {
     final models = await _dbHelper.getClients();
-    return models.map((m) => Client(
-      id: m.id,
-      name: m.name,
-      phone: m.phone,
-      address: m.address,
-      credit: m.credit,
-    )).toList();
+    return models
+        .map(
+          (m) => Client(
+            id: m.id,
+            name: m.name,
+            phone: m.phone,
+            address: m.address,
+            credit: m.credit,
+          ),
+        )
+        .toList();
   }
 
   @override

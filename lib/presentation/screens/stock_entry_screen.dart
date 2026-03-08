@@ -726,7 +726,10 @@ class _StockEntryScreenState extends State<StockEntryScreen> {
                       buyPrice: item.buyPrice,
                       sellPrice: item.sellPrice,
                       quantity: item.quantity,
-                      purchaseDate: DateTime.now().toIso8601String().substring(0, 10),
+                      purchaseDate: DateTime.now().toIso8601String().substring(
+                        0,
+                        10,
+                      ),
                     );
                     await articleProvider.addPurchase(purchase);
                   }
@@ -819,4 +822,3 @@ class _StockEntryItem {
     this.sellPrice = 0,
   });
 }
-

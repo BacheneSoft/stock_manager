@@ -33,4 +33,3 @@ class VenteArticle {
     costPrice: (map['costPrice'] as num?)?.toDouble() ?? 0,
   );
 }
-

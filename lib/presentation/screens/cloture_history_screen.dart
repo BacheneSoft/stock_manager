@@ -23,9 +23,7 @@ class _ClotureHistoryScreenState extends State<ClotureHistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Historique des Clôtures'),
-      ),
+      appBar: AppBar(title: const Text('Historique des Clôtures')),
       body: FutureBuilder<List<Cloture>>(
         future: _cloturesFuture,
         builder: (context, snapshot) {
@@ -60,10 +58,26 @@ class _ClotureHistoryScreenState extends State<ClotureHistoryScreen> {
                         ),
                       ),
                       const Divider(),
-                      _buildRow('Montant Déclaré:', cloture.montant, Colors.orange),
-                      _buildRow('Chiffre d\'affaire:', cloture.calculatedCA, Colors.blue),
-                      _buildRow('Encaissement:', cloture.calculatedEncaissement, Colors.green),
-                      _buildRow('Bénéfice:', cloture.calculatedBenefit, Colors.teal),
+                      _buildRow(
+                        'Montant Déclaré:',
+                        cloture.montant,
+                        Colors.orange,
+                      ),
+                      _buildRow(
+                        'Chiffre d\'affaire:',
+                        cloture.calculatedCA,
+                        Colors.blue,
+                      ),
+                      _buildRow(
+                        'Encaissement:',
+                        cloture.calculatedEncaissement,
+                        Colors.green,
+                      ),
+                      _buildRow(
+                        'Bénéfice:',
+                        cloture.calculatedBenefit,
+                        Colors.teal,
+                      ),
                     ],
                   ),
                 ),
@@ -84,14 +98,10 @@ class _ClotureHistoryScreenState extends State<ClotureHistoryScreen> {
           Text(label),
           Text(
             Formatters.formatCurrency(value),
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: color,
-            ),
+            style: TextStyle(fontWeight: FontWeight.bold, color: color),
           ),
         ],
       ),
     );
   }
 }
-

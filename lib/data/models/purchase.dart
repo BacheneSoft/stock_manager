@@ -41,4 +41,3 @@ class Purchase {
     purchaseDate: map['purchaseDate'] as String,
   );
 }
-

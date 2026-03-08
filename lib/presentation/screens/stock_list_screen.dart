@@ -600,4 +600,3 @@ class _StockListScreenState extends State<StockListScreen>
     );
   }
 }
-

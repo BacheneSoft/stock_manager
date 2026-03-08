@@ -20,7 +20,8 @@ class ArticleProvider extends ChangeNotifier {
 
   Future<void> addArticle(Article article) async {
     if (AppConfig.isDemoMode && _articles.length >= AppConfig.maxArticleLimit) {
-      const error = 'Demo Limit Reached: Maximum ${AppConfig.maxArticleLimit} articles allowed in Demo Mode.';
+      const error =
+          'Demo Limit Reached: Maximum ${AppConfig.maxArticleLimit} articles allowed in Demo Mode.';
       LoggerService.w(error);
       throw Exception(error);
     }

@@ -6,4 +6,3 @@ class Formatters {
     return formatter.format(value);
   }
 }
-

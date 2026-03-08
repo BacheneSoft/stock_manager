@@ -509,9 +509,10 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                               const SizedBox(height: 24),
                               // Client credit balance display
                               FutureBuilder<double>(
-                                future: Provider.of<ClientProvider>(context, listen: false).getClientCredit(
-                                  widget.client.id!,
-                                ),
+                                future: Provider.of<ClientProvider>(
+                                  context,
+                                  listen: false,
+                                ).getClientCredit(widget.client.id!),
                                 builder: (context, snapshot) {
                                   final clientCredit = snapshot.data ?? 0.0;
                                   return Container(
@@ -833,7 +834,11 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                                             if (widget.vente == null &&
                                                 !_isPaid) {
                                               // Only for new vente and not paid
-                                              final clientProvider = Provider.of<ClientProvider>(context, listen: false);
+                                              final clientProvider =
+                                                  Provider.of<ClientProvider>(
+                                                    context,
+                                                    listen: false,
+                                                  );
                                               final clientAdvance =
                                                   await clientProvider
                                                       .getClientCredit(
@@ -896,7 +901,9 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
                                                     articleId: article.id!,
                                                     quantity: entry.value,
                                                     price: article.sellPrice,
-                                                    costPrice: article.buyPrice, // Store cost for benefit tracking
+                                                    costPrice:
+                                                        article
+                                                            .buyPrice, // Store cost for benefit tracking
                                                   ),
                                                 );
                                               }
@@ -981,4 +988,3 @@ class _AddVenteScreenState extends State<AddVenteScreen> {
     );
   }
 }
-

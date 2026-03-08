@@ -55,4 +55,3 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
     );
   }
 }
-

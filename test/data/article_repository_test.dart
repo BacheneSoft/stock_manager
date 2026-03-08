@@ -47,7 +47,9 @@ void main() {
 
     test('getArticles should return a list of Article entities', () async {
       // arrange
-      when(() => mockDbHelper.getArticles()).thenAnswer((_) async => [tArticleModel]);
+      when(
+        () => mockDbHelper.getArticles(),
+      ).thenAnswer((_) async => [tArticleModel]);
 
       // act
       final result = await repository.getArticles();
@@ -58,15 +60,20 @@ void main() {
       verify(() => mockDbHelper.getArticles()).called(1);
     });
 
-    test('insertArticle should call DatabaseHelper with correct model', () async {
-      // arrange
-      when(() => mockDbHelper.insertArticle(any())).thenAnswer((_) async => 1);
+    test(
+      'insertArticle should call DatabaseHelper with correct model',
+      () async {
+        // arrange
+        when(
+          () => mockDbHelper.insertArticle(any()),
+        ).thenAnswer((_) async => 1);
 
-      // act
-      await repository.insertArticle(tArticleEntity);
+        // act
+        await repository.insertArticle(tArticleEntity);
 
-      // assert
-      verify(() => mockDbHelper.insertArticle(any())).called(1);
-    });
+        // assert
+        verify(() => mockDbHelper.insertArticle(any())).called(1);
+      },
+    );
   });
 }

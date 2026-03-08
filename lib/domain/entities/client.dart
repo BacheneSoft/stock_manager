@@ -17,5 +17,3 @@ class Client {
     this.credit = 0,
   });
 }
-
-
